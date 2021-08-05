@@ -1,6 +1,6 @@
 ### Changelog
 
-# 0.1.0-beta
+# 0.1.1-beta
 * Updated DirectoryFinder to handle ambigious folder names
 * Updated filefinder to handle files like `.app`
 * Updated DataCache to read `cache.size` as a systemproperty
