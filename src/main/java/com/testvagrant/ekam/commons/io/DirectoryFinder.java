@@ -27,10 +27,8 @@ public class DirectoryFinder {
       assert files != null;
       for (File file : files) {
         if (file.isDirectory() && file.getName().equalsIgnoreCase(directoryName)) {
-          boolean isValidDirectory = Arrays
-                  .stream(Objects.requireNonNull(file.listFiles()))
-                  .anyMatch(file1 -> Files.getFileExtension(file1.getName()).contains(validFileTypeInDirectory));
-          if(isValidDirectory) {
+          List<File> filesWithExtension = new FileFinder(file.getPath()).findWithExtension(validFileTypeInDirectory);
+          if(!filesWithExtension.isEmpty()) {
             directories.add(file.getPath());
           }
         } else {

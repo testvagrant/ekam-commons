@@ -23,9 +23,17 @@ public class DataCache<Value> {
   protected LoadingCache<String, Value> build(
       CacheLoaderCondition<String, Value> cacheLoaderCondition) {
     return CacheBuilder.newBuilder()
-        .maximumSize(100)
+        .maximumSize(getCacheSize())
         .expireAfterWrite(4, TimeUnit.HOURS)
         .build(buildCacheLoader(cacheLoaderCondition));
+  }
+
+  private long getCacheSize() {
+    try {
+      return Long.parseLong(System.getProperty("cache.size", "10000"));
+    } catch (NumberFormatException e) {
+      return 10000;
+    }
   }
 
   public void put(String key, Value value) {

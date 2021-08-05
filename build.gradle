@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'com.testvagrant.ekam.commons'
-version '0.0.9-beta'
+version '0.1.0-beta'
 
 sourceCompatibility = 1.8
 
@@ -63,7 +63,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-commons'
-            version '0.0.9-beta'
+            version '0.1.0-beta'
 
             from components.java
 
