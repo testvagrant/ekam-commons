@@ -37,9 +37,7 @@ public class FileFinder {
   }
 
   private String getPath(String path) {
-    return Objects.isNull(path) || path.isEmpty()
-            ? ResourcePaths.ROOT
-            : path;
+    return Objects.isNull(path) || path.isEmpty() ? ResourcePaths.ROOT : path;
   }
 
   public List<File> findWithExtension(String fileExtension) {
@@ -64,7 +62,8 @@ public class FileFinder {
               () ->
                   new RuntimeException(
                       String.format(
-                          "File %s%s not found in %s env and path %s", fileName, fileExtension, env, path)));
+                          "File %s%s not found in %s env and path %s",
+                          fileName, fileExtension, env, path)));
     }
     return fileToSearch;
   }
@@ -97,7 +96,7 @@ public class FileFinder {
       File[] files = rootFile.listFiles();
       assert files != null;
       for (File file : files) {
-        if (!file.isDirectory()) {
+        if (!file.isDirectory() && fileExtensionToSearch.equalsIgnoreCase(".app")) {
           fileFound = file.getName().equals(String.format("%s%s", fileName, fileExtensionToSearch));
           if (fileFound) {
             fileToSearch = file;
