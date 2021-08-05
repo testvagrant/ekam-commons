@@ -5,6 +5,8 @@
 * Updated filefinder to handle files like `.app`
 * Updated DataCache to read `cache.size` as a systemproperty
 
+# 0.1.0-beta
+* Issue publishing from nexus, released 0.1.1-beta
 # 0.0.9-beta
 * Reverted io commons version to stable
 * Fixed issue with directory finder when there are conflicting folders
