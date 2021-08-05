@@ -1,13 +1,11 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 plugins {
     id 'java'
     id 'maven-publish'
     id 'signing'
-    id "com.github.johnrengelman.shadow" version "5.2.0"
 }
 
 group 'com.testvagrant.ekam.commons'
-version '0.0.8-beta'
+version '0.0.9-beta'
 
 sourceCompatibility = 1.8
 
@@ -23,7 +21,7 @@ dependencies {
     implementation('com.google.code.gson:gson:2.8.7')
 
     // Apache commons-io
-    implementation('commons-io:commons-io:20030203.000550')
+    implementation('commons-io:commons-io:2.10.0')
 
     //lombok
     implementation('org.projectlombok:lombok:1.18.20')
@@ -36,7 +34,7 @@ dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter-engine:5.8.0-M1')
     testImplementation('org.junit-pioneer:junit-pioneer:1.4.2')
 
-    testImplementation('org.assertj:assertj-guava:3.4.0')
+    testImplementation("org.assertj:assertj-guava:2.0.1")
 }
 
 test {
@@ -65,7 +63,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-commons'
-            version '0.0.8-beta'
+            version '0.0.9-beta'
 
             from components.java
 
@@ -146,23 +144,4 @@ model {
 
 signing {
     sign publishing.publications
-}
-
-task fatJar(type: Jar) {
-    manifest {
-        attributes 'Manifest-Version': '1.0', 'Implementation-Title': 'xyz', 'Implementation-Version': version
-    }
-    from {
-        configurations.testRuntime.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    into 'resources', {
-        from sourceSets.test.resources
-    }
-    from sourceSets.test.output
-}
-
-task testJar(type: com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
-    archiveClassifier.set("alltests")
-    from sourceSets.main.output, sourceSets.test.output
-    configurations = [project.configurations.testRuntimeClasspath]
 }

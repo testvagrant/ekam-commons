@@ -10,8 +10,7 @@ public class DirectoryFinderTest {
 
   @Test
   public void findDirectoryAnyWhere() {
-    Optional<String> data_sets_main = new DirectoryFinder().find("data_sets_main");
+    Optional<String> data_sets_main = new DirectoryFinder().find("data_sets_main", "json");
     Assertions.assertTrue(data_sets_main.isPresent());
-    System.out.println(data_sets_main.get());
   }
 }

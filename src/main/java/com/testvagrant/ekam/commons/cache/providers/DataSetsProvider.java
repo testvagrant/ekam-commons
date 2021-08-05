@@ -37,9 +37,9 @@ public class DataSetsProvider {
   public DataSetsCache load() {
     DataSetsCache dataSetsCache = new DataSetsCache();
     String env = System.getProperty(DATASETS.DATASETS_ENV, System.getProperty("env", ""));
-    Optional<String> dataSetsPathOptional = new DirectoryFinder().find(System.getProperty(DATASETS.DIR));
-    String dataSetsPath = dataSetsPathOptional.orElseThrow(() -> new RuntimeException("Cannot find datasets directory " + DATASETS.DIR));
-    List<File> fileList = new FileFinder(dataSetsPath, env)
+    Optional<String> dataSetsPathOptional = new DirectoryFinder().find(System.getProperty(DATASETS.DIR), "json");
+    String dataSetsPath = dataSetsPathOptional.orElse("");
+    List<File> fileList = dataSetsPath.isEmpty()? new ArrayList<>() : new FileFinder(dataSetsPath, env)
             .findWithExtension(".json");
 
     fileList
