@@ -26,7 +26,7 @@ public class SharedDataCache<Value> extends DataCache<Value> {
 
   public synchronized Optional<Value> get(String key, boolean lockRecord) {
     Value value = getValue(availableCache, key);
-    if(Objects.isNull(value)) return Optional.empty();
+    if (Objects.isNull(value)) return Optional.empty();
     if (lockRecord) lock(key);
     return Optional.of(value);
   }

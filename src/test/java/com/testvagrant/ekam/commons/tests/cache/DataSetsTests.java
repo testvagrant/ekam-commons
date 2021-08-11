@@ -4,8 +4,6 @@ import com.testvagrant.ekam.commons.data.DataSetsClient;
 import com.testvagrant.ekam.commons.dataclients.CredentialsDataClient;
 import com.testvagrant.ekam.commons.dataclients.DataClient;
 import com.testvagrant.ekam.commons.models.Credentials;
-import lombok.Getter;
-import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junitpioneer.jupiter.SetSystemProperty;
@@ -83,8 +81,8 @@ public class DataSetsTests extends CacheTestBase {
   @Test
   public void shouldGetListValuesForKey() {
     DataSetsClient dataClient = new DataSetsClient();
-    List<com.testvagrant.ekam.commons.models.Models> models = dataClient.getListValue("models", com.testvagrant.ekam.commons.models.Models.class);
+    List<com.testvagrant.ekam.commons.models.Models> models =
+        dataClient.getListValue("models", com.testvagrant.ekam.commons.models.Models.class);
     Assertions.assertEquals(models.size(), 2);
   }
 }
-

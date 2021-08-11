@@ -30,8 +30,8 @@ public class FileFinderTest {
   public void shouldFindFileWhenRootFileIsNotSpecified() {
     File hosts = new FileFinder("", "qa").find("hosts.json");
     Map<String, String> maps =
-            new GsonParser()
-                    .deserialize(hosts.getPath(), new TypeToken<Map<String, String>>() {}.getType());
+        new GsonParser()
+            .deserialize(hosts.getPath(), new TypeToken<Map<String, String>>() {}.getType());
     Assertions.assertEquals(maps.get("host"), "qa");
   }
 

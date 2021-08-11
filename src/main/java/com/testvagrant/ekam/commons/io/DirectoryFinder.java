@@ -1,9 +1,9 @@
 package com.testvagrant.ekam.commons.io;
 
-import com.google.common.io.Files;
-
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class DirectoryFinder {
 
@@ -21,14 +21,16 @@ public class DirectoryFinder {
         .findFirst();
   }
 
-  private void collectDirectories(File rootFile, String directoryName, String validFileTypeInDirectory) {
+  private void collectDirectories(
+      File rootFile, String directoryName, String validFileTypeInDirectory) {
     if (rootFile.exists() && rootFile.isDirectory()) {
       File[] files = rootFile.listFiles();
       assert files != null;
       for (File file : files) {
         if (file.isDirectory() && file.getName().equalsIgnoreCase(directoryName)) {
-          List<File> filesWithExtension = new FileFinder(file.getPath()).findWithExtension(validFileTypeInDirectory);
-          if(!filesWithExtension.isEmpty()) {
+          List<File> filesWithExtension =
+              new FileFinder(file.getPath()).findWithExtension(validFileTypeInDirectory);
+          if (!filesWithExtension.isEmpty()) {
             directories.add(file.getPath());
           }
         } else {

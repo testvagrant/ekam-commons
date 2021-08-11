@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Models {
-    private String name;
-    private String platform;
+  private String name;
+  private String platform;
 }

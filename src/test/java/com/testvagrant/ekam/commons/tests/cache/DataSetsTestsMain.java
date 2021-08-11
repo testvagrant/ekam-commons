@@ -82,8 +82,8 @@ public class DataSetsTestsMain extends CacheTestBase {
   @Test
   public void shouldGetListValuesForKey() {
     DataSetsClient dataClient = new DataSetsClient();
-    List<Models> models = dataClient.getListValue("models", com.testvagrant.ekam.commons.models.Models.class);
+    List<Models> models =
+        dataClient.getListValue("models", com.testvagrant.ekam.commons.models.Models.class);
     Assertions.assertEquals(models.size(), 2);
   }
 }
-
