@@ -1,4 +1,4 @@
-package com.testvagrant.ekam.commons.data;
+package com.testvagrant.ekam.commons.cache.clients;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
@@ -18,11 +18,11 @@ import static com.testvagrant.ekam.commons.cache.providers.DataSetsProvider.data
 import static com.testvagrant.ekam.commons.constants.ResourcesConfigKeys.DATASETS;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
-public class DataSetsClient {
+public class DataSetsCacheClient {
 
   private final DataSetsCache dataSets;
 
-  public DataSetsClient() {
+  public DataSetsCacheClient() {
     this.dataSets = dataSetsProvider();
   }
 

@@ -1,15 +1,15 @@
-package com.testvagrant.ekam.commons.data;
+package com.testvagrant.ekam.commons.cache.clients;
 
 import com.testvagrant.ekam.commons.cache.DataStoreCache;
 
 import static com.testvagrant.ekam.commons.cache.providers.DataStoreProvider.dataStoreProvider;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
-public class DataStoreClient {
+public class DataStoreCacheClient {
 
   private final DataStoreCache dataStoreCache;
 
-  public DataStoreClient() {
+  public DataStoreCacheClient() {
     this.dataStoreCache = dataStoreProvider();
   }
 

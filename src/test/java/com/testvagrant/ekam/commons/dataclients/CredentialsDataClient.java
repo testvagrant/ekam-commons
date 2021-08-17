@@ -1,7 +1,7 @@
 package com.testvagrant.ekam.commons.dataclients;
 
 import com.google.gson.internal.LinkedTreeMap;
-import com.testvagrant.ekam.commons.data.DataSetsClient;
+import com.testvagrant.ekam.commons.cache.clients.DataSetsCacheClient;
 import com.testvagrant.ekam.commons.models.Credentials;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Predicate;
 
-public class CredentialsDataClient extends DataSetsClient {
+public class CredentialsDataClient extends DataSetsCacheClient {
 
   public List<Credentials> getAuthorizedUsers() {
     List<Credentials> credentials = getCredentialsList(DataKeys.AUTHORIZED_USER);

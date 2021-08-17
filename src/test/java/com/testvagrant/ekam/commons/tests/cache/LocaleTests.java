@@ -1,6 +1,6 @@
 package com.testvagrant.ekam.commons.tests.cache;
 
-import com.testvagrant.ekam.commons.locale.LocaleClient;
+import com.testvagrant.ekam.commons.cache.clients.LocaleCacheClient;
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
@@ -10,10 +10,10 @@ import org.junitpioneer.jupiter.SetSystemProperty;
 @SetSystemProperty(key = "locale.dir", value = "locale")
 public class LocaleTests {
 
-  private final LocaleClient client;
+  private final LocaleCacheClient client;
 
   public LocaleTests() {
-    client = new LocaleClient();
+    client = new LocaleCacheClient();
   }
 
   @Test

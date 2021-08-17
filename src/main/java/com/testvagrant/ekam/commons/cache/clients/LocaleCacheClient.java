@@ -1,15 +1,15 @@
-package com.testvagrant.ekam.commons.locale;
+package com.testvagrant.ekam.commons.cache.clients;
 
 import com.testvagrant.ekam.commons.cache.LocaleCache;
 
 import static com.testvagrant.ekam.commons.cache.providers.LocaleProvider.localeProvider;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
-public class LocaleClient {
+public class LocaleCacheClient {
 
   private final LocaleCache localCache;
 
-  public LocaleClient() {
+  public LocaleCacheClient() {
     this.localCache = localeProvider();
   }
 

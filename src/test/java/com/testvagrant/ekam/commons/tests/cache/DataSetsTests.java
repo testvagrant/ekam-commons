@@ -1,6 +1,6 @@
 package com.testvagrant.ekam.commons.tests.cache;
 
-import com.testvagrant.ekam.commons.data.DataSetsClient;
+import com.testvagrant.ekam.commons.cache.clients.DataSetsCacheClient;
 import com.testvagrant.ekam.commons.dataclients.CredentialsDataClient;
 import com.testvagrant.ekam.commons.dataclients.DataClient;
 import com.testvagrant.ekam.commons.models.Credentials;
@@ -73,14 +73,14 @@ public class DataSetsTests extends CacheTestBase {
 
   @Test
   public void shouldGetList() {
-    DataSetsClient dataClient = new DataSetsClient();
+    DataSetsCacheClient dataClient = new DataSetsCacheClient();
     List<String> packageManagers = dataClient.getListValue("phone_models");
     Assertions.assertEquals(packageManagers.size(), 7);
   }
 
   @Test
   public void shouldGetListValuesForKey() {
-    DataSetsClient dataClient = new DataSetsClient();
+    DataSetsCacheClient dataClient = new DataSetsCacheClient();
     List<com.testvagrant.ekam.commons.models.Models> models =
         dataClient.getListValue("models", com.testvagrant.ekam.commons.models.Models.class);
     Assertions.assertEquals(models.size(), 2);
