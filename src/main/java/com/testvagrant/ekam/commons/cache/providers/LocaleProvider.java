@@ -7,7 +7,10 @@ import com.testvagrant.ekam.commons.io.GsonParser;
 
 import java.io.File;
 import java.io.FileReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import static com.testvagrant.ekam.commons.constants.ResourcesConfigKeys.Locale;
 
@@ -32,10 +35,13 @@ public class LocaleProvider {
   public LocaleCache load() {
     String env = System.getProperty(Locale.LOCALE_ENV, System.getProperty("env", ""));
     List<File> files = new ArrayList<>();
-    Optional<String> localeDirOptional = new DirectoryFinder().find(System.getProperty(Locale.DIR), "json");
+    Optional<String> localeDirOptional =
+        new DirectoryFinder().find(System.getProperty(Locale.DIR), "json");
     String localeDir = localeDirOptional.orElse("");
-    List<File> fileList = localeDir.isEmpty()? new ArrayList<>() : new FileFinder(localeDir, env)
-            .findWithExtension(".json");
+    List<File> fileList =
+        localeDir.isEmpty()
+            ? new ArrayList<>()
+            : new FileFinder(localeDir, env).findWithExtension(".json");
     files.addAll(fileList);
 
     GsonParser gsonParser = new GsonParser();

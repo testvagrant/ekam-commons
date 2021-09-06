@@ -34,9 +34,7 @@ public class ResourcePaths {
   public static String getPath(String rootPath, String property) {
     String value = System.getProperty(property, "");
     return String.valueOf(
-            value.isEmpty()
-                    ? new PathBuilder(rootPath)
-                    : new PathBuilder(rootPath).append(value));
+        value.isEmpty() ? new PathBuilder(rootPath) : new PathBuilder(rootPath).append(value));
   }
 
   public static String getTestPath(String className, String testName) {

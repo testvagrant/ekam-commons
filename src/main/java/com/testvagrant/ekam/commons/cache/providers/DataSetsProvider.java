@@ -36,14 +36,15 @@ public class DataSetsProvider {
   public DataSetsCache load() {
     DataSetsCache dataSetsCache = new DataSetsCache();
     String env = System.getProperty(DATASETS.DATASETS_ENV, System.getProperty("env", ""));
-    Optional<String> dataSetsPathOptional = new DirectoryFinder().find(System.getProperty(DATASETS.DIR), "json");
+    Optional<String> dataSetsPathOptional =
+        new DirectoryFinder().find(System.getProperty(DATASETS.DIR), "json");
     String dataSetsPath = dataSetsPathOptional.orElse("");
-    List<File> fileList = dataSetsPath.isEmpty()? new ArrayList<>() : new FileFinder(dataSetsPath, env)
-            .findWithExtension(".json");
+    List<File> fileList =
+        dataSetsPath.isEmpty()
+            ? new ArrayList<>()
+            : new FileFinder(dataSetsPath, env).findWithExtension(".json");
 
-    fileList
-            .stream().parallel()
-            .forEach(file -> transform(dataSetsCache, file));
+    fileList.stream().parallel().forEach(file -> transform(dataSetsCache, file));
 
     return dataSetsCache;
   }

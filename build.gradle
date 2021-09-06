@@ -5,13 +5,11 @@ plugins {
 }
 
 group 'com.testvagrant.ekam.commons'
-version '0.1.1-beta'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 dependencies {
@@ -34,7 +32,7 @@ dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter-engine:5.8.0-M1')
     testImplementation('org.junit-pioneer:junit-pioneer:1.4.2')
 
-    testImplementation("org.assertj:assertj-guava:2.0.1")
+    testImplementation('org.assertj:assertj-guava:3.4.0')
 }
 
 test {
@@ -63,7 +61,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-commons'
-            version '0.1.1-beta'
+            version '0.1.0'
 
             from components.java
 
@@ -105,26 +103,26 @@ def customizePom(pom) {
 
             description 'Ekam commons for data, file, i8 and cache management'
             name 'Ekam Common'
-            url 'https://gitlab.com/testvagrant/automation-studio/ekam'
+            url 'https://github.com/testvagrant/ekam-commons'
             organization {
                 name 'com.testvagrant.ekam'
-                url 'https://gitlab.com/testvagrant/automation-studio'
+                url 'https://github.com/testvagrant'
             }
             issueManagement {
-                system 'GitLab'
-                url 'https://gitlab.com/testvagrant/automation-studio/ekam-commons/issues'
+                system 'GitHub'
+                url 'https://github.com/testvagrant/ekam-commons/issues'
             }
             licenses {
                 license {
                     name 'MIT License'
-                    url 'https://gitlab.com/testvagrant/automation-studio/ekam-studio/ekam-commons/-/blob/master/LICENSE'
+                    url 'https://github.com/testvagrant/ekam-commons/-/blob/master/LICENSE'
                     distribution 'repo'
                 }
             }
             scm {
-                url 'https://gitlab.com/testvagrant/automation-studio/ekam-studio/ekam-commons'
-                connection 'https://gitlab.com/testvagrant/automation-studio/ekam-studio/ekam-commons.git'
-                developerConnection 'git@gitlab.com:testvagrant/automation-studio/ekam-studio/ekam-commons.git'
+                url 'https://github.com/testvagrant/ekam-commons'
+                connection 'https://github.com/testvagrant/ekam-commons.git'
+                developerConnection 'git@github.com:testvagrant/ekam-commons.git'
             }
             developers {
                 developer {
