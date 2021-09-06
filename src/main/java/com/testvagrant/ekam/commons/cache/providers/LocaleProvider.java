@@ -1,7 +1,6 @@
 package com.testvagrant.ekam.commons.cache.providers;
 
 import com.testvagrant.ekam.commons.cache.LocaleCache;
-import com.testvagrant.ekam.commons.constants.ResourcesConfigKeys;
 import com.testvagrant.ekam.commons.io.DirectoryFinder;
 import com.testvagrant.ekam.commons.io.FileFinder;
 import com.testvagrant.ekam.commons.io.GsonParser;

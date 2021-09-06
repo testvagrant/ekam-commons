@@ -1,7 +1,5 @@
 package com.testvagrant.ekam.commons.io;
 
-import com.google.common.io.Files;
-
 import java.io.File;
 import java.util.*;
 

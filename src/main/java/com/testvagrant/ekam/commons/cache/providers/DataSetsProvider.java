@@ -5,7 +5,6 @@ import com.testvagrant.ekam.commons.cache.DataSetsCache;
 import com.testvagrant.ekam.commons.io.DirectoryFinder;
 import com.testvagrant.ekam.commons.io.FileFinder;
 import com.testvagrant.ekam.commons.io.GsonParser;
-import com.testvagrant.ekam.commons.io.ResourcePaths;
 
 import java.io.File;
 import java.io.FileNotFoundException;

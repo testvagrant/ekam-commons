@@ -4,8 +4,6 @@ import com.testvagrant.ekam.commons.data.DataSetsClient;
 import com.testvagrant.ekam.commons.dataclients.CredentialsDataClient;
 import com.testvagrant.ekam.commons.dataclients.DataClient;
 import com.testvagrant.ekam.commons.models.Credentials;
-import lombok.Getter;
-import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junitpioneer.jupiter.SetSystemProperty;
