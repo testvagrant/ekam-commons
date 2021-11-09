@@ -39,7 +39,7 @@ public final class PathBuilder {
 
         final String windowsPath;
         if (path.contains(":") && OsUtils.isWindows()) {
-            windowsPath = path.replaceAll(":", "-");
+            windowsPath = path.replaceAll(":", "-");  // Windows have issue with ":" which is causing to throw an error.
             getPath(windowsPath);
         } else {
             getPath(path);
@@ -48,7 +48,7 @@ public final class PathBuilder {
     }
 
     private void getPath(final String path) {
-        boolean trailingSlash = sb.charAt(sb.length() - 1) == File.separator.charAt(0);
+        boolean trailingSlash = sb.charAt(sb.length() - 1) == File.separator.charAt(0);  // Using File.separator instead os specific separator.
         boolean leadingSlash = path.charAt(0) == File.separator.charAt(0);
 
         if (trailingSlash && leadingSlash) {
