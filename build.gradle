@@ -61,7 +61,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-commons'
-            version '1.0.0'
+            version '1.0.1-beta'
 
             from components.java
 
@@ -79,10 +79,10 @@ publishing {
         maven {
             url "https://oss.sonatype.org/service/local/staging/deploy/maven2"
             credentials {
-                username System.getenv("sonatypeUsername")
-                password System.getenv("sonatypePassword")
-//                username sonatypeUsername
-//                password sonatypePassword
+//                username System.getenv("sonatypeUsername")
+//                password System.getenv("sonatypePassword")
+                username sonatypeUsername
+                password sonatypePassword
             }
         }
     }

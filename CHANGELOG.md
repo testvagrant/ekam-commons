@@ -1,5 +1,12 @@
 ### Changelog
 
+# 1.0.1 - beta
+* Fixed path builder issue for windows
+
+# 1.0.0
+* Ekam Release 1.0.0
+* Added pipeline 
+
 # 0.1.1-beta
 
 * Updated DirectoryFinder to handle ambigious folder names
