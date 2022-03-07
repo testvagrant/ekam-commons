@@ -79,10 +79,10 @@ publishing {
         maven {
             url "https://oss.sonatype.org/service/local/staging/deploy/maven2"
             credentials {
-//                username System.getenv("sonatypeUsername")
-//                password System.getenv("sonatypePassword")
-                username sonatypeUsername
-                password sonatypePassword
+                username System.getenv("sonatypeUsername")
+                password System.getenv("sonatypePassword")
+//                username sonatypeUsername
+//                password sonatypePassword
             }
         }
     }
