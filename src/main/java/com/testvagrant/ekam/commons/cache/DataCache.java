@@ -24,7 +24,7 @@ public class DataCache<Value> {
       CacheLoaderCondition<String, Value> cacheLoaderCondition) {
     return CacheBuilder.newBuilder()
         .maximumSize(getCacheSize())
-        .expireAfterWrite(4, TimeUnit.HOURS)
+        .expireAfterWrite(getCacheTime(),TimeUnit.HOURS)
         .build(buildCacheLoader(cacheLoaderCondition));
   }
 
@@ -96,6 +96,14 @@ public class DataCache<Value> {
       return Long.parseLong(System.getProperty("cache.size", "10000"));
     } catch (NumberFormatException e) {
       return 10000;
+    }
+  }
+
+  private int getCacheTime(){
+    try {
+      return Integer.parseInt(System.getProperty("cache.time","4"));
+    } catch (NumberFormatException e) {
+      return 4;
     }
   }
 }
