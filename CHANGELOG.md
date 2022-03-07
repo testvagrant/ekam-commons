@@ -1,5 +1,8 @@
 ### Changelog
 
+# 1.0.2
+* Added the cache age configuration feature
+
 # 1.0.1 - beta
 * Fixed path builder issue for windows
 
