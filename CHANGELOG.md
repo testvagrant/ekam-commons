@@ -1,4 +1,6 @@
 ### Changelog
+# 1.0.3
+* Upgraded Dependencies
 
 # 1.0.2
 * Added the cache age configuration feature
